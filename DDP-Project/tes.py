@@ -77,12 +77,15 @@ if st.sidebar.button("Lihat Prediksi Mingguan"):
 # Sidebar untuk rekomendasi
 st.sidebar.header("Rekomendasi")
 
-if weather_data is not None and weather_data.get("weather"):
-    if "hujan" in weather_data["weather"][0]["description"]:
-        st.write("Rekomendasi: Bawa payung!")
-    elif "langit cerah" in weather_data["weather"][0]["description"]:
-        st.write("Rekomendasi: Cuaca Cerah!")
+if "hujan"in weather_data["weather"][0]["description"]:
+        st.write("Rekomendasi: sediakan payung atau jas hujan saat keluar.")
+    elif "cerah" in weather_data["weather"][0]["description"]:
+        st.write("Rekomendasi: Cuaca cerah! Gunakan pakaian ringan dan jangan lupa sunscreen.")
+    elif "mendung" in weather_data["weather"][0]["description"]:
+        st.write ("Rekomendasi: Cuaca mendung Anda mungkin memerlukan jaket ringan.")
+    elif "badai petir"in weather_data["weather"][0]["description"]:
+        st.write("Rekomendasi: Hati-hati dengan petir dan hujan lebat, sebaiknya tetap di dalam ruangan.")
+   elif "cerah berawan"in weather_data["weather"][0]["description"]:
+        st.write("Rekomendasi: cuaca pas digunakan untuk jalan santai.")
     else:
-        st.write("Rekomendasi: Cuaca baik, tidak perlu payung.")
-else:
-    st.write("Silakan cek suhu atau cuaca terlebih dahulu.")
+        st.write ("Rekomendasi: Cuaca normal. Nikmati hari Anda!")
