@@ -16,7 +16,7 @@ location = st.sidebar.selectbox("Pilih wilayah:", ["Jakarta", "Bogor", "Depok", 
 weather_data = None
 
 # Sidebar untuk cek suhu
-st.sidebar.header("Cek Informasi Cuaca")
+st.sidebar.header("Cek Suhu")
 if st.sidebar.button("Cek Suhu"):
     weather_data = get_weather_data(location)
     if weather_data.get("main"):
@@ -40,17 +40,19 @@ if st.sidebar.button("Cek Cuaca"):
 st.sidebar.header("Rekomendasi")
 
 if weather_data is not None and weather_data.get("weather"):
-    if "hujan"in weather_data["weather"][0]["description"]:
-        st.write("Rekomendasi: sediakan payung atau jas hujan saat keluar.")
+    if "hujan" in weather_data["weather"][0]["description"]:
+        st.write("Rekomendasi: Sediakan payung atau jas hujan saat keluar.")
     elif "langit cerah" in weather_data["weather"][0]["description"]:
         st.write("Rekomendasi: Cuaca Cerah!")
     elif "cerah" in weather_data["weather"][0]["description"]:
         st.write("Rekomendasi: Cuaca cerah! Gunakan pakaian ringan dan jangan lupa sunscreen.")
     elif "mendung" in weather_data["weather"][0]["description"]:
-        st.write ("Rekomendasi: Cuaca mendung Anda mungkin memerlukan jaket ringan.")
-    elif "badai petir"in weather_data["weather"][0]["description"]:
+        st.write ("Rekomendasi: Cuaca mendung, Anda mungkin memerlukan jaket ringan.")
+    elif "badai petir" in weather_data["weather"][0]["description"]:
         st.write("Rekomendasi: Hati-hati dengan petir dan hujan lebat, sebaiknya tetap di dalam ruangan.")
-    elif "cerah berawan"in weather_data["weather"][0]["description"]:
+    elif "cerah berawan" in weather_data["weather"][0]["description"]:
         st.write("Rekomendasi: cuaca pas digunakan untuk jalan santai.")
+    else:
+        st.write ("Cuaca normal. Nikmati hari Anda!")
 else:
     st.write("Silakan cek suhu atau cuaca terlebih dahulu.")
