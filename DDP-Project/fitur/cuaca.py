@@ -90,11 +90,10 @@ if st.sidebar.button("Prediksi Cuaca", icon=":material/cloud_alert:"):
         
         # Membuat DataFrame dari data
         df = pd.DataFrame(data)
-        
-        # Styling DataFrame dengan warna putih
+
         styled_df = df.style.set_properties(**{
              'background-color': 'white',
-        }).hide(axis="index")
+        }).format({"Suhu (°C)": "{:.2f}"})  # Format suhu ke 2 angka desimal
         
         # Menampilkan DataFrame yang telah di-styling
         st.dataframe(styled_df, hide_index=True)
