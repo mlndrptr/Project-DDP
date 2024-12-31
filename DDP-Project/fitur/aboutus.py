@@ -7,7 +7,7 @@ st.set_page_config(page_title="Tentang Kami", page_icon=":star:")
 st.title("Tentang aplikasi ini")
 st.markdown("""Sebuah website cuaca di Jabodetabek biasanya dirancang user-friendly dengan desain responsif agar mudah diakses dari berbagai perangkat seperti komputer, tablet, atau ponsel. Fitur-fitur utama yang sering disediakan.
 
-Serta Website ini dibuat dengan tujuan memberikan informasi dan layanan Cuaca terkait kawasan Jabodetabek (Jakarta, Bogor, Depok, Tangerang, dan Bekasi). Situs ini dapat melayani berbagai kebutuhan pengguna, mulai dari informasi umum hingga rekomdasi yang kita perlukan
+Serta Website ini dibuat dengan tujuan memberikan informasi dan layanan Cuaca secara real-time terkait kawasan Jabodetabek (Jakarta, Bogor, Depok, Tangerang, dan Bekasi). Situs ini dapat melayani berbagai kebutuhan pengguna, mulai dari informasi umum hingga rekomdasi yang kita perlukan
 """)
 
 st.header("Our Team!", divider="red")
